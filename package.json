@@ -1,0 +1,12 @@
+{
+  "name": "Eclipse-Torii",
+  "version": "1.0.0",
+  "description": "Marketplace Game Glow in the Dark",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
