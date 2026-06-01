@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse Torii | Cyber Marketplace Game</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Huruf -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Icon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050209; 
+            overflow-x: hidden;
+        }
+        .font-cyber {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Animasi Background Berdenyut Mistis */
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 10% 20%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 80%, rgba(239, 68, 68, 0.12) 0%, transparent 50%);
+            animation: eclipsePulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes eclipsePulse {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.1) rotate(2deg); }
+        }
+        /* Efek Glow */
+        .glow-purple {
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+            border: 1px solid rgba(168, 85, 247, 0.6);
+        }
+        .glow-red {
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+            border: 1px solid rgba(239, 68, 68, 0.6);
+        }
+        .text-glow-purple {
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+        }
+        .text-glow-red {
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+        }
+    </style>
+</head>
+<body class="text-slate-100">
+
+    <!-- Animasi Background -->
+    <div class="animated-bg"></div>
+
+    <!-- NAVBAR UTAMA -->
+    <nav class="sticky top-0 z-40 backdrop-blur-lg bg-[#050209]/90 border-b border-purple-950/50 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-torii-gate text-2xl text-red-500 text-glow-red"></i>
+                <h1 class="text-xl font-black font-cyber tracking-wider text-white">
+                    ECLIPSE <span class="text-purple-500 text-glow-purple">TORII</span>
+                </h1>
+            </div>
+            <!-- Di sini kita kasih ID biar bisa dideteksi oleh Javascript nanti -->
+            <div class="flex items-center gap-3">
+                <button id="nav-login-btn" class="text-white hover:text-red-400 text-sm font-semibold transition px-2 py-1">Masuk</button>
+                <button id="nav-register-btn" class="bg-red-600 hover:bg-red-500 text-white font-bold px-4 py-2 rounded-md text-sm transition glow-red">
+                    Daftar
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER HERO UTAMA -->
+    <header class="max-w-6xl mx-auto px-4 mt-12 text-center relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-600/10 rounded-full blur-3xl -z-10"></div>
+        <h2 class="text-3xl md:text-5xl font-extrabold font-cyber tracking-tight text-white leading-tight">
+            GATEWAY TO <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-red-500 to-white">NEXT-GEN TRADING</span>
+        </h2>
+        <p class="text-slate-400 text-xs md:text-sm mt-3 max-w-md mx-auto">
+            Pasar digital terpercaya dengan sistem keamanan <span class="text-red-400">Escrow</span> ketat dan transaksi secepat kilat.
+        </p>
+        <div class="mt-8 max-w-md mx-auto relative">
+            <input type="text" placeholder="Cari item ghaib atau top up game..." class="w-full bg-[#0d0714] border border-purple-900/60 rounded-lg py-3 px-12 text-sm text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all placeholder:text-slate-600">
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-purple-500"></i>
+        </div>
+    </header>
+
+    <!-- KATEGORI UTAMA -->
+    <main class="max-w-6xl mx-auto px-4 mt-16 mb-32">
+        <div class="flex items-center justify-between mb-6">
+            <h3 class="text-base font-bold font-cyber tracking-wide text-white flex items-center gap-2">
+                <span class="w-1.5 h-4 bg-red-500 inline-block shadow-[0_0_8px_#ef4444]"></span>
+                KATEGORI POPULER
+            </h3>
+            <span class="text-xs text-purple-400 hover:underline cursor-pointer">Lihat Semua <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Item 1 -->
+            <div class="game-card bg-[#0b0612]/80 p-4 rounded-xl border border-purple-950/60 hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer group hover:border-purple-500 glow-purple">
+                <div class="w-full h-24 bg-gradient-to-t from-[#140b21] to-[#050209] border border-purple-950 rounded-lg mb-3 flex items-center justify-center relative overflow-hidden">
+                    <i class="fa-solid fa-bolt text-2xl text-purple-400 group-hover:scale-120 group-hover:text-red-400 transition-all"></i>
+                </div>
+                <h4 class="font-bold text-white text-sm group-hover:text-purple-400 transition">Mobile Legends</h4>
+                <div class="flex justify-between items-center mt-1">
+                    <span class="text-[10px] text-slate-500">Top Up & Akun</span>
+                    <span class="text-[10px] bg-red-950/50 text-red-400 px-1.5 py-0.5 rounded border border-red-900/40">HOT</span>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="game-card bg-[#0b0612]/80 p-4 rounded-xl border border-purple-950/60 hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer group hover:border-red-500 glow-red">
+                <div class="w-full h-24 bg-gradient-to-t from-[#140b21] to-[#050209] border border-purple-950 rounded-lg mb-3 flex items-center justify-center">
+                    <i class="fa-solid fa-cubes text-2xl text-red-400 group-hover:text-white transition-colors"></i>
+                </div>
+                <h4 class="font-bold text-white text-sm group-hover:text-red-400 transition">Roblox</h4>
+                <div class="flex justify-between items-center mt-1">
+                    <span class="text-[10px] text-slate-500">Robux & Item</span>
+                    <span class="text-[10px] text-emerald-400 font-semibold">⚡ INSTAN</span>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="game-card bg-[#0b0612]/80 p-4 rounded-xl border border-purple-950/60 hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer group hover:border-purple-500 transition">
+                <div class="w-full h-24 bg-gradient-to-t from-[#140b21] to-[#050209] border border-purple-950 rounded-lg mb-3 flex items-center justify-center">
+                    <i class="fa-solid fa-crosshairs text-2xl text-slate-400 group-hover:text-purple-400 transition-colors"></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">Valorant</h4>
+                <p class="text-[10px] text-slate-500 mt-0.5">Points & Skins</p>
+            </div>
+            <!-- Item 4 -->
+            <div class="game-card bg-[#0b0612]/80 p-4 rounded-xl border border-purple-950/60 hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer group hover:border-purple-500 transition">
+                <div class="w-full h-24 bg-gradient-to-t from-[#140b21] to-[#050209] border border-purple-950 rounded-lg mb-3 flex items-center justify-center">
+                    <i class="fa-solid fa-gamepad text-2xl text-slate-400 group-hover:text-purple-400 transition-colors"></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">Voucher Game</h4>
+                <p class="text-[10px] text-slate-500 mt-0.5">Steam, Garena, dll</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== UTK POP-UP / MODAL AUTH (FITUR BARU) ==================== -->
+    <div id="auth-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-300">
+        <div class="bg-[#0b0612] w-full max-w-md rounded-2xl p-6 border border-purple-900 relative glow-purple">
+            <!-- Tombol Close Keluar -->
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-slate-500 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Menu Pilihan Tab -->
+            <div class="flex border-b border-purple-950 mb-6 font-cyber text-sm">
+                <button id="tab-login" class="w-1/2 pb-3 text-center border-b-2 border-red-500 text-white font-bold">MASUK</button>
+                <button id="tab-register" class="w-1/2 pb-3 text-center border-b-2 border-transparent text-slate-400 hover:text-white">DAFTAR</button>
+            </div>
+
+            <!-- FORM LOGIN -->
+            <form id="form-login" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-slate-400 font-semibold mb-1">EMAIL / USERNAME</label>
+                    <input type="text" placeholder="Masukkan akun lo..." class="w-full bg-[#050209] border border-purple-950 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-400 font-semibold mb-1">PASSWORD</label>
+                    <input type="password" placeholder="••••••••" class="w-full bg-[#050209] border border-purple-950 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-lg text-sm transition font-cyber tracking-wider shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+                    ACCESS PLATFORM
+                </button>
+            </form>
+
+            <!-- FORM DAFTAR (Hidden awal) -->
+            <form id="form-register" class="space-y-4 hidden">
+                <div>
+                    <label class="block text-xs text-slate-400 font-semibold mb-1">USERNAME BARU</label>
+                    <input type="text" placeholder="Mau pakai nickname apa?" class="w-full bg-[#050209] border border-purple-950 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-red-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-400 font-semibold mb-1">ALAMAT EMAIL</label>
+                    <input type="email" placeholder="nama@email.com" class="w-full bg-[#050209] border border-purple-950 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-red-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-400 font-semibold mb-1">PASSWORD STYLISH</label>
+                    <input type="password" placeholder="Bikin yang susah ditebak" class="w-full bg-[#050209] border border-purple-950 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-red-500 transition">
+                </div>
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-2.5 rounded-lg text-sm transition font-cyber tracking-wider shadow-[0_0_10px_rgba(239,68,68,0.5)]">
+                    CREATE ACCOUNT
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-purple-950/40 bg-[#030106] p-6 text-center text-xs text-slate-600 fixed bottom-0 left-0 w-full backdrop-blur-md z-30">
+        <div>&copy; 2026 <span class="font-cyber text-white">ECLIPSE <span class="text-red-500">TORII</span></span>. All Rights Reserved.</div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ENGINE (OTAK ENGINE TOMBOL) ==================== -->
+    <script>
+        const authModal = document.getElementById('auth-modal');
+        const navLoginBtn = document.getElementById('nav-login-btn');
+        const navRegisterBtn = document.getElementById('nav-register-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        
+        const tabLogin = document.getElementById('tab-login');
+        const tabRegister = document.getElementById('tab-register');
+        const formLogin = document.getElementById('form-login');
+        const formRegister = document.getElementById('form-register');
+
+        // Fungsi Buka Pop Up
+        function openModal(activeTab) {
+            authModal.classList.remove('hidden');
+            setTimeout(() => {
+                authModal.classList.remove('opacity-0');
+            }, 10);
+            
+            if(activeTab === 'login') {
+                switchTab('login');
+            } else {
+                switchTab('register');
+            }
+        }
+
+        // Fungsi Tutup Pop Up
+        function closeModal() {
+            authModal.classList.add('opacity-0');
+            setTimeout(() => {
+                authModal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Fungsi Ganti Tab di Dalam Pop Up
+        function switchTab(type) {
+            if(type === 'login') {
+                tabLogin.classList.add('border-red-500', 'text-white', 'font-bold');
+                tabLogin.classList.remove('border-transparent', 'text-slate-400');
+                tabRegister.classList.remove('border-red-500', 'text-white', 'font-bold');
+                tabRegister.classList.add('border-transparent', 'text-slate-400');
+                
+                formLogin.classList.remove('hidden');
+                formRegister.classList.add('hidden');
+            } else {
+                tabRegister.classList.add('border-red-500', 'text-white', 'font-bold');
+                tabRegister.classList.remove('border-transparent', 'text-slate-400');
+                tabLogin.classList.remove('border-red-500', 'text-white', 'font-bold');
+                tabLogin.classList.add('border-transparent', 'text-slate-400');
+                
+                formRegister.classList.remove('hidden');
+                formLogin.classList.add('hidden');
+            }
+        }
+
+        // Pasang Event Klik ke Tombol Navigasi
+        navLoginBtn.addEventListener('click', () => openModal('login'));
+        navRegisterBtn.addEventListener('click', () => openModal('register'));
+        closeModalBtn.addEventListener('click', closeModal);
+        
+        tabLogin.addEventListener('click', () => switchTab('login'));
+        tabRegister.addEventListener('click', () => switchTab('register'));
+
+        // Efek simulasi klik kartu game biar interaktif
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const gameName = card.querySelector('h4').innerText;
+                alert(`Membuka pasar untuk game: ${gameName}\n(Fitur halaman produk segera hadir di langkah berikutnya!)`);
+            });
+        });
+    </script>
+</body>
+                      </html>
+                      
